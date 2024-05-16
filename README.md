@@ -1,5 +1,5 @@
 # Barkuspad
-Welcome, here you will find parts and recources for all versions of the barkus pad.
+Welcome, here you will find parts and recources for all versions of the Barkus pad.
 
 This also includes dance pad firmware for the NanoESP Development board, I hope someday this board, or another ESP32S3 based development board will become the go to for all dance pad controllers.
 <br>The benifits are as follows:
@@ -12,5 +12,5 @@ This also includes dance pad firmware for the NanoESP Development board, I hope 
 <br><br>>Low cost, a WaveShare dev board can be had for 8$ USD, furthermore the chip itself costs only 3$ USD.
 <br>
 The ESP32S3 is super promising, I hope to provide a good demonstration of its power to the dance pad community.
-<br>
+<br><br>
 There are also folders for most of the 3d printed parts of the pad in here with details such that replacements parts can be had independant of me. Just open the folder for the version of pad you have and open the parts folder, then follow the instructions for said part.

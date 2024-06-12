@@ -12,7 +12,8 @@ No need for workarounds like UnoJoy that require tampering with the bootloader.
 ### Native Bluetooth HID support
 This could be really cool for travel pads. Imagine embedding this controller within a travel pad and powering it via a UL, CE, Etc... certified USB power bank, we could have cheap and easily made TSA-friendly Bluetooth travel pads.
 ### Extremely flexible GPIO Pin mapping
-### Low cost, a WaveShare dev board can be had for 8$ USD, furthermore the chip itself costs only 3$ USD.
+### Low cost
+A WaveShare dev board can be had for 8$ USD, furthermore, the chip itself costs only 3$ USD.
 <br>
 The ESP32S3 is super promising, I hope to provide a good demonstration of its power to the dance pad community.
 <br><br>

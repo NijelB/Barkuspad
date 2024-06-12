@@ -1,5 +1,5 @@
 # Barkuspad
-Welcome, here you will find parts and resources for all versions of the Barkus pad. This also includes dance pad firmware for the NanoESP Development board, I hope someday this board, or another ESP32S3-based development board will become the go-to for all dance pad controllers.
+Welcome, here you will find parts and resources for all versions of the Barkus pad. This also includes dance pad firmware for the NanoESP Development board, I hope someday this board, or another ESP32S3-based development board will become the go-to for all DIY game controllers.
 
 # Benifits of ESP32:
 ### 20 Analog Channels

@@ -1,5 +1,5 @@
 //OBJECTIVES:
-//1: Poll at 1000hz 100% stability.
+//1: Poll at 1000hz 100% stability. 
 //2: Have a UI where the user can adjust input sensitivity, see sensor values, and adjust the input pins for backwards compatibility with older pads, or custom pads.
 //(3) -- For a later date, setup Bluetooth LE for input. This could be really good for travel pads.
 

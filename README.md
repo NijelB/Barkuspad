@@ -14,8 +14,10 @@ This could be really cool for travel pads. Imagine embedding this controller wit
 ### Extremely flexible GPIO Pin mapping
 ### Low cost
 A WaveShare dev board can be had for 8$ USD, furthermore, the chip itself costs only 3$ USD.
-<br>
+<br><br>
 The ESP32S3 is super promising, I hope to provide a good demonstration of its power to the dance pad community.
 <br><br>
-There are also folders for most of the 3d printed parts of the pad in here with details such that replacement parts can be made independently. Just open the folder for the version of the pad you have and open the parts folder, then follow the instructions for said part.
+
+# Plastic Parts:
+There are folders for most of the 3d printed parts of the pad in here with details such that replacement parts can be made independently. Just open the folder for the version of the pad you have and open the parts folder, then follow the instructions for said part.
 

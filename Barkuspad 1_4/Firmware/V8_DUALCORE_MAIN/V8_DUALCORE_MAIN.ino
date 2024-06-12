@@ -32,6 +32,7 @@
 #define SCREEN_HEIGHT 64
 #define OLED_RESET -1
 #define SCREEN_ADDRESS 0x3C
+#define portTICK_PERIOD_US ( ( TickType_t ) 1000000 / configTICK_RATE_HZ )
 
 #define STACK_SIZE 5000  //They all use ~3200 each so 4000 is a pretty good number
 
@@ -338,7 +339,7 @@ void InputController(void* parameters) {
   then send the state at the end of the loop. If we do setButton(1, on) for each button the polling rate drops all the way down to 125hz. So Ive gotta figure out how to get this input mask to work for the buttons. */
 
   for (;;) {
-    long start = xTaskGetTickCount();
+    unsigned long start = micros();
     //MAIN FSR ANALOG READ
     bool buttonInputsMask[32] = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
     for (int i = 0; i < inputs; i++) {
@@ -382,20 +383,26 @@ void InputController(void* parameters) {
     //SEND CONTROLLER STATE
     if (testPoll == false) {
       Gamepad.send(0, 0, 0, 0, 0, 0, 0, 0x00000000 | sendMask);
-      continue;  //SEND STATE AND GO TO NEXT ITERATION OF THE FOR LOOP TO SKIP THE POLL RATE TESTER, IN THIS CASE CONTINUE IS THE SAME AS A RETURN STATEMENT
     }
-    //POLL RATE TESTER
-    if (flipper == true) {
-      flipper = false;
-      Gamepad.send(10, 100, 0, 0, 0, 0, 0, 0x00000006);
-    } else {
-      flipper = true;
-      Gamepad.send(100, 10, 0, 0, 0, 0, 0, 0x00000006);
+    else{
+      //POLL RATE TESTER
+      if (flipper == true) {
+        flipper = false;
+        Gamepad.send(10, 100, 0, 0, 0, 0, 0, 0x00000006);
+      } else {
+        flipper = true;
+        Gamepad.send(100, 10, 0, 0, 0, 0, 0, 0x00000006);
+      }
     }
-    long stop = xTaskGetTickCount() - start;
-    if(stop == 0){
-      vTaskDelay(1);
+
+    //KEEP POLL AT 1000HZ
+    unsigned long end = micros();
+    unsigned long ellapsed = end - start; 
+    unsigned long remainingTime = 1; // remaining time in microseconds
+    if(ellapsed < 994){
+      remainingTime = 994 - ellapsed;
     }
+    vTaskDelay(remainingTime / portTICK_PERIOD_US);
   } 
 }
 
